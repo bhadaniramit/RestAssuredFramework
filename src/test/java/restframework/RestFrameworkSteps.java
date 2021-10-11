@@ -1,15 +1,10 @@
 package restframework;
 
 import HttpMethodClass.RestUtils;
-import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Given;
 import io.restassured.response.Response;
 
 import java.io.IOException;
-import java.util.Iterator;
-import java.util.Set;
-
-import static io.restassured.RestAssured.baseURI;
 
 public class RestFrameworkSteps {
     ReadFile readProperties;
@@ -23,11 +18,11 @@ public class RestFrameworkSteps {
         System.out.println("Response Body " + response.asPrettyString());
     }
 
-    @Given("I will trigger the API with Param")
-    public void getURLWithParam(DataTable dataTable) throws IOException {
+    @Given("I will trigger the API with Param {string} and {int}")
+    public void getURLWithParam(String key, int id) throws IOException {
         baseURI = "https://reqres.in/api/users";
         RestUtils utilityMethod = new RestUtils();
-        Response response = utilityMethod.getResponse(baseURI);
+        Response response = utilityMethod.getResponseWithVariable(baseURI, key, id);
         System.out.println("Response Body " + response.asPrettyString());
     }
 }
