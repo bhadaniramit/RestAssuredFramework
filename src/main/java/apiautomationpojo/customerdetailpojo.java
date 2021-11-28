@@ -48,6 +48,7 @@ public class customerdetailpojo {
         this.avatar = avatar;
     }
 
+    // If the nest json is there we need to create a Getter and setter for that object
     public Supportdetailpojo getSupportdetailpojo() {
         return supportdetailpojo;
     }

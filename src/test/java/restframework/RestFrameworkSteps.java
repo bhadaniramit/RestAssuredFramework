@@ -25,4 +25,6 @@ public class RestFrameworkSteps {
         Response response = utilityMethod.getResponseWithVariable(baseURI, key, id);
         System.out.println("Response Body " + response.asPrettyString());
     }
+
+
 }
